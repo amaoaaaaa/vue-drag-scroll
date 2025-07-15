@@ -1,0 +1,47 @@
+{
+    "name": "@amaoaaaaa/vue-drag-scroll",
+    "version": "0.0.0",
+    "description": "一个 Vue 3 指令，支持通过拖拽滚动容器内容，支持指定子容器。",
+    "main": "dist/drag-scroll.umd.js",
+    "module": "dist/drag-scroll.es.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/drag-scroll.es.js",
+            "require": "./dist/drag-scroll.umd.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "prepublishOnly": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amaoaaaaa/vue-drag-scroll.git"
+    },
+    "keywords": [
+        "vue",
+        "directive",
+        "drag",
+        "scroll",
+        "vue3",
+        "drag-scroll"
+    ],
+    "author": "amao",
+    "license": "MIT",
+    "peerDependencies": {
+        "vue": "^3.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.13",
+        "typescript": "^5.0.0",
+        "vite": "^5.0.0",
+        "vite-plugin-dts": "^4.5.4",
+        "vue": "^3.2.0"
+    }
+}
