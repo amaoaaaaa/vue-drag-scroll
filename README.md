@@ -25,24 +25,22 @@ pnpm add vue-drag-scroll
 
 ```ts
 // main.ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import { dragScroll } from 'vue-drag-scroll'
 
-const app = createApp(App)
+import dragScroll from '@amaoaaaaa/vue-drag-scroll';
+app.use(dragScroll);
 
-app.directive('drag-scroll', dragScroll)
-
-app.mount('#app')
+// 或者
+import { dragScroll } from '@amaoaaaaa/vue-drag-scroll';
+app.directive('drag-scroll', dragScroll);
 ```
 
 ### 示例 1：滚动自己的内容
 
 ```vue
 <template>
-  <div v-drag-scroll class="overflow-auto h-96 bg-gray-100">
-    <div class="w-[2000px] h-[2000px]">Huge content...</div>
-  </div>
+    <div v-drag-scroll class="overflow-auto h-96 bg-gray-100">
+        <div class="w-[2000px] h-[2000px]">Huge content...</div>
+    </div>
 </template>
 ```
 
@@ -50,17 +48,17 @@ app.mount('#app')
 
 ```vue
 <template>
-  <el-scrollbar v-drag-scroll="'.el-scrollbar__wrap'" always height="300px">
-    <div style="width: 2000px">Some long content</div>
-  </el-scrollbar>
+    <el-scrollbar v-drag-scroll="'.el-scrollbar__wrap'" always height="300px">
+        <div style="width: 2000px">Some long content</div>
+    </el-scrollbar>
 </template>
 ```
 
 ## ⚙️ 参数说明
 
-| 参数类型     | 描述                | 是否必填 | 示例                      |
-| -------- | ----------------- | ---- | ----------------------- |
-| `string` | 子元素选择器，用于选择内部滚动容器 | 否    | `'.el-scrollbar__wrap'` |
+| 参数类型  |              描述               | 是否必填 |           示例          |
+| -------- | ------------------------------- | ------- | ----------------------- |
+| `string` | 子元素选择器，用于选择内部滚动容器 |   否    | `'.el-scrollbar__wrap'` |
 
 不传参数时，默认滚动当前绑定元素本身。
 
@@ -73,25 +71,25 @@ app.mount('#app')
 import { dragScroll } from 'vue-drag-scroll'
 
 declare module '@vue/runtime-core' {
-  export interface ComponentCustomProperties {
-    /**
-     * 自定义指令：v-drag-scroll
-     *
-     * @description 拖拽滚动内容
-     *
-     * @example
-     * // 滚动自己的内容，指令不需要传参数
-     * <div v-drag-scroll class="h-96 bg-red-500/50 overflow-auto">
-     *     <p class="w-[800px]">{{ Random.csentence(99999) }}</p>
-     * </div>
-     *
-     * @example
-     * // 滚动内部子元素，参数传子元素的选择器
-     * <el-scrollbar v-drag-scroll="'.el-scrollbar__wrap'" always class="h-60">
-     *     ......
-     * </el-scrollbar>
-     */
-    vDragScroll: typeof dragScroll;
-  }
+    export interface ComponentCustomProperties {
+        /**
+         * 自定义指令：v-drag-scroll
+         *
+         * @description 拖拽滚动内容
+         *
+         * @example
+         * // 滚动自己的内容，指令不需要传参数
+         * <div v-drag-scroll class="h-96 bg-red-500/50 overflow-auto">
+         *     <p class="w-[800px]">{{ Random.csentence(99999) }}</p>
+         * </div>
+         *
+         * @example
+         * // 滚动内部子元素，参数传子元素的选择器
+         * <el-scrollbar v-drag-scroll="'.el-scrollbar__wrap'" always class="h-60">
+         *     ......
+         * </el-scrollbar>
+         */
+        vDragScroll: typeof dragScroll;
+    }
 }
 ```
