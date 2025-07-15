@@ -1,6 +1,6 @@
 {
     "name": "@amaoaaaaa/vue-drag-scroll",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "一个 Vue 3 指令，支持通过拖拽滚动容器内容，支持指定子容器。",
     "main": "dist/drag-scroll.umd.js",
     "module": "dist/drag-scroll.es.js",
